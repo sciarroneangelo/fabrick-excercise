@@ -1,0 +1,14 @@
+dev\asciarrone\fabricktest\controller\TransactionController.class
+dev\asciarrone\fabricktest\apiclient\apiobject\BaseApiObject.class
+dev\asciarrone\fabricktest\controller\BaseAbstractControllerV10.class
+dev\asciarrone\fabricktest\mapper\BalanceMapperService.class
+dev\asciarrone\fabricktest\controller\BalanceController.class
+dev\asciarrone\fabricktest\controller\viewobject\BalanceInputDataVo.class
+dev\asciarrone\fabricktest\controller\viewobject\BalanceVo.class
+dev\asciarrone\fabricktest\apiclient\apiobject\BalanceApiObject.class
+dev\asciarrone\fabricktest\controller\TrasferController.class
+dev\asciarrone\fabricktest\apiclient\apiobject\payload\BalancePayLoad.class
+dev\asciarrone\fabricktest\apiclient\service\systemobject\BalanceSystemObject.class
+dev\asciarrone\fabricktest\application\Application.class
+dev\asciarrone\fabricktest\apiclient\service\BalanceService.class
+dev\asciarrone\fabricktest\apiclient\apiobject\Error.class
