@@ -5,6 +5,8 @@ dev\asciarrone\fabricktest\controller\BaseAbstractControllerV10.class
 dev\asciarrone\fabricktest\mapper\BalanceMapperService.class
 dev\asciarrone\fabricktest\controller\BalanceController.class
 dev\asciarrone\fabricktest\controller\viewobject\BalanceInputDataVo.class
+dev\asciarrone\fabricktest\dto\CreditorDto.class
+dev\asciarrone\fabricktest\configuration\ApplicationConfiguration.class
 dev\asciarrone\fabricktest\controller\viewobject\BalanceVo.class
 dev\asciarrone\fabricktest\apiclient\apiobject\BalanceApiObject.class
 dev\asciarrone\fabricktest\controller\TrasferController.class

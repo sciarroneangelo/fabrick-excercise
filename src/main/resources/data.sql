@@ -1,0 +1,1 @@
+INSERT INTO creditor (cr_name, cr_account_code, cr_bicCode) VALUES ('John Doe', 'IT23A0336844430152923804660', 'SELBIT2BXXX'); 

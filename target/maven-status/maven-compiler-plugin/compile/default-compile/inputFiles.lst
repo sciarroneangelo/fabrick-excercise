@@ -1,6 +1,8 @@
 C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\mapper\BalanceMapperService.java
 C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\apiclient\apiobject\BalanceApiObject.java
 C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\apiclient\apiobject\payload\BalancePayLoad.java
+C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\configuration\ApplicationConfiguration.java
+C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\dto\CreditorDto.java
 C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\apiclient\service\systemobject\BalanceSystemObject.java
 C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\controller\viewobject\BalanceVo.java
 C:\Source\Sella\fabrick-excercise\src\main\java\dev\asciarrone\fabricktest\apiclient\apiobject\BaseApiObject.java

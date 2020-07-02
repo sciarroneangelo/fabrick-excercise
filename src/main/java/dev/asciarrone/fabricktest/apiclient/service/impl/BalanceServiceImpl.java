@@ -33,6 +33,11 @@ public class BalanceServiceImpl extends BaseService implements BalanceService {
 			ResponseEntity<BalanceApiObject> response = restTemplate.exchange(
 					BALANCE_SERVICE_URL.replace("{accountId}", accountId), HttpMethod.GET, httpEntity,
 					BalanceApiObject.class);
+
+			if (response.getStatusCode() != HttpStatus.OK) {
+				throw new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR,
+						"Internal error, please check data and retry");
+			}
 			return balanceMapperService.ApiToSo(response.getBody());
 		} catch (HttpClientErrorException.Forbidden ex) {
 			throw new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "Invalid Account Id");

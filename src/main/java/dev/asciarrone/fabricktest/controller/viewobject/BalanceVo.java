@@ -5,6 +5,10 @@ import java.util.Date;
 
 public class BalanceVo implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8821221324351011438L;
 	private Date date;
 	private Number balance;
 	private Number availableBalance;
