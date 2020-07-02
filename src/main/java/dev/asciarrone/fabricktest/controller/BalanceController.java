@@ -1,7 +1,9 @@
 package dev.asciarrone.fabricktest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.asciarrone.fabricktest.apiclient.service.BalanceService;
@@ -20,7 +22,7 @@ public class BalanceController extends BaseAbstractControllerV10 {
 	BalanceMapperService balanceMapperService;
 
 	@RequestMapping(value = "/getLastBalance")
-	public BalanceVo balanceReading(BalanceInputDataVo inputData) {
+	public @ResponseBody BalanceVo balanceReading(@RequestBody BalanceInputDataVo inputData) {
 
 		return balanceMapperService.soToVo(balanceService.readBalance(inputData.getAccountId()));
 	}
