@@ -9,9 +9,6 @@
 
 
 
-	<properties>
-		<java.version>11</java.version>
-	</properties>
 
 
 
@@ -21,6 +18,9 @@
 		<version>2.3.1.RELEASE</version>
 	</parent>
 
+	<properties>
+		<java.version>11</java.version>
+	</properties>
 	<dependencies>
 
 		<!-- <dependency> -->
@@ -36,11 +36,17 @@
 			<artifactId>spring-beans</artifactId>
 
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+<!-- 			<scope>test</scope> -->
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+<!-- 			<scope>test</scope> -->
 			<exclusions>
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
@@ -58,7 +64,7 @@
 				<configuration>
 					<finalName>gabrick-excercise</finalName>
 					<mainClass>
-						dev.asciarrone.fabricktest.application.Application
+						dev.asciarrone.fabricktest.Application
 					</mainClass>
 				</configuration>
 			</plugin>

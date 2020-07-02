@@ -22,10 +22,10 @@ public class BalanceMapperService {
 
 	public BalanceSystemObject ApiToSo(BalanceApiObject apio) {
 		BalanceSystemObject so = new BalanceSystemObject();
-		so.setAvailableBalance(apio.getPayLoad().getAvailableBalance());
-		so.setBalance(apio.getPayLoad().getAvailableBalance());
-		so.setCurrency(apio.getPayLoad().getCurrency());
-		so.setDate(apio.getPayLoad().getDate());
+		so.setAvailableBalance(apio.getPayload().getAvailableBalance());
+		so.setBalance(apio.getPayload().getAvailableBalance());
+		so.setCurrency(apio.getPayload().getCurrency());
+		so.setDate(apio.getPayload().getDate());
 		return so;
 	}
 
