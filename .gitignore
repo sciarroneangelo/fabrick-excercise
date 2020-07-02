@@ -10,3 +10,5 @@
 .settings/org.eclipse.m2e.core.prefs
 
 .settings/org.springframework.ide.eclipse.prefs
+
+target/
