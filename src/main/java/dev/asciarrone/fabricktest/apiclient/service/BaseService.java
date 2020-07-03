@@ -1,10 +1,7 @@
 package dev.asciarrone.fabricktest.apiclient.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,13 +13,10 @@ public class BaseService {
 	@Autowired
 	protected RestTemplate restTemplate;
 
-	@Bean
-	public HttpEntity<String> httpEntity() {
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		headers.set("Auth-Schema", "\"S2S\"");
-		headers.set("Api-Key", "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP");
-		HttpEntity<String> entity = new HttpEntity<String>("body", headers);
-		return entity;
-	}
+	@Autowired
+	protected RestTemplate moneyTransferRestTemplate;
+
+	@Autowired
+	protected HttpHeaders httpHeaders;
+
 }
