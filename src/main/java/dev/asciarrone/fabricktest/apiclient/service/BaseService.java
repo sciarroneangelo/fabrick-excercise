@@ -14,7 +14,7 @@ public class BaseService {
 	protected RestTemplate restTemplate;
 
 	@Autowired
-	protected RestTemplate moneyTrasferRestTemplate;
+	protected RestTemplate moneyTransferRestTemplate;
 
 	@Autowired
 	protected HttpHeaders httpHeaders;

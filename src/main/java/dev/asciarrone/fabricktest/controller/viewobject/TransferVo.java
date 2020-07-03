@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrasferVo implements Serializable {
+public class TransferVo implements Serializable {
 
 	/**
 	 * 

@@ -22,7 +22,7 @@ public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
 
 		if (httpResponse.getStatusCode().series() == HttpStatus.Series.CLIENT_ERROR
 				&& httpResponse.getStatusCode() == HttpStatus.BAD_REQUEST) {
-			throw new MoneyTrasferException();
+			throw new MoneyTransferException();
 
 		}
 	}

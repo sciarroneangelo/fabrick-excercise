@@ -2,7 +2,7 @@ package dev.asciarrone.fabricktest.handler;
 
 import java.io.IOException;
 
-public class MoneyTrasferException extends IOException {
+public class MoneyTransferException extends IOException {
 
 	/**
 	 * 

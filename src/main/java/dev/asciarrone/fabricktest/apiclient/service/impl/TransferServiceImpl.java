@@ -9,34 +9,34 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import dev.asciarrone.fabricktest.apiclient.apiobject.TrasferApiInputObject;
+import dev.asciarrone.fabricktest.apiclient.apiobject.TransferApiInputObject;
 import dev.asciarrone.fabricktest.apiclient.service.BaseService;
 import dev.asciarrone.fabricktest.apiclient.service.CreditorService;
-import dev.asciarrone.fabricktest.apiclient.service.TrasferService;
+import dev.asciarrone.fabricktest.apiclient.service.TransferService;
 import dev.asciarrone.fabricktest.apiclient.service.object.ErrorSo;
-import dev.asciarrone.fabricktest.apiclient.service.object.TrasferInputSo;
-import dev.asciarrone.fabricktest.apiclient.service.object.TrasferSo;
-import dev.asciarrone.fabricktest.handler.MoneyTrasferException;
-import dev.asciarrone.fabricktest.mapper.TrasferMapper;
+import dev.asciarrone.fabricktest.apiclient.service.object.TransferInputSo;
+import dev.asciarrone.fabricktest.apiclient.service.object.TransferSo;
+import dev.asciarrone.fabricktest.handler.MoneyTransferException;
+import dev.asciarrone.fabricktest.mapper.TransferMapper;
 
 @Service
-public class TrasferServiceImpl extends BaseService implements TrasferService {
+public class TransferServiceImpl extends BaseService implements TransferService {
 
-	private final static String TRASFER_SERVICE_URL = BASE_SERVICE_URL
+	private final static String TRANSFER_SERVICE_URL = BASE_SERVICE_URL
 			+ "accounts/{accountId}/payments/money-transfers ";
 
 	@Autowired
 	CreditorService creditorService;
 
 	@Autowired
-	TrasferMapper trasferMapper;
+	TransferMapper transferMapper;
 
 	@Override
-	public TrasferSo newMoneyTrasfer(TrasferInputSo inputSo) {
+	public TransferSo newMoneyTransfer(TransferInputSo inputSo) {
 		if (inputSo == null) {
 			throw new IllegalStateException();
 		}
-		TrasferSo so = new TrasferSo();
+		TransferSo so = new TransferSo();
 		// Without more specification assume that creditor information not passed by
 		// controller and used for call the API are stored in a database
 		try {
@@ -47,7 +47,7 @@ public class TrasferServiceImpl extends BaseService implements TrasferService {
 		if (inputSo.getCreditor() == null) {
 			creditorNotFoundError(so);
 		} else {
-			TrasferApiInputObject apiObj = trasferMapper.inputSoToApi(inputSo);
+			TransferApiInputObject apiObj = transferMapper.inputSoToApi(inputSo);
 			ObjectMapper mapper = new ObjectMapper();
 			String test = null;
 			try {
@@ -58,15 +58,15 @@ public class TrasferServiceImpl extends BaseService implements TrasferService {
 				e.printStackTrace();
 			}
 
-			ResponseEntity<TrasferApiObject> response = null;
+			ResponseEntity<TransferApiObject> response = null;
 			try {
 				HttpEntity<String> entity = new HttpEntity<String>(test, httpHeaders);
-				response = moneyTrasferRestTemplate.exchange(
-						TRASFER_SERVICE_URL.replace("{accountId}", inputSo.getAccountId()), HttpMethod.POST, entity,
-						TrasferApiObject.class);
-				so = trasferMapper.apiToSo(response.getBody());
+				response = moneyTransferRestTemplate.exchange(
+						TRANSFER_SERVICE_URL.replace("{accountId}", inputSo.getAccountId()), HttpMethod.POST, entity,
+						TransferApiObject.class);
+				so = transferMapper.apiToSo(response.getBody());
 			} catch (Exception ex) {
-				if (ex.getCause().getClass().equals(MoneyTrasferException.class)) {
+				if (ex.getCause().getClass().equals(MoneyTransferException.class)) {
 
 					so.setStatus("KO");
 					so.getErrors().add(
@@ -80,7 +80,7 @@ public class TrasferServiceImpl extends BaseService implements TrasferService {
 
 	}
 
-	private void creditorNotFoundError(TrasferSo so) {
+	private void creditorNotFoundError(TransferSo so) {
 		so.setStatus("KO");
 		so.getErrors().add(new ErrorSo("CR0001",
 				"Can finde creditor, if you alredy insert in the registry, please contact customer service."));

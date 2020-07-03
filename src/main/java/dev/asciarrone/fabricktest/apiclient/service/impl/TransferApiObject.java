@@ -2,7 +2,7 @@ package dev.asciarrone.fabricktest.apiclient.service.impl;
 
 import dev.asciarrone.fabricktest.apiclient.apiobject.BaseApiObject;
 
-public class TrasferApiObject extends BaseApiObject {
+public class TransferApiObject extends BaseApiObject {
 
 	/**
 	 * 

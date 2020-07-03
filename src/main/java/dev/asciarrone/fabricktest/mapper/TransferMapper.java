@@ -11,25 +11,25 @@ import org.springframework.stereotype.Component;
 import dev.asciarrone.fabricktest.apiclient.apiobject.AccountApiObject;
 import dev.asciarrone.fabricktest.apiclient.apiobject.AdrressApiobject;
 import dev.asciarrone.fabricktest.apiclient.apiobject.CreditorApiObject;
-import dev.asciarrone.fabricktest.apiclient.apiobject.TrasferApiInputObject;
-import dev.asciarrone.fabricktest.apiclient.service.impl.TrasferApiObject;
+import dev.asciarrone.fabricktest.apiclient.apiobject.TransferApiInputObject;
+import dev.asciarrone.fabricktest.apiclient.service.impl.TransferApiObject;
 import dev.asciarrone.fabricktest.apiclient.service.object.ErrorSo;
-import dev.asciarrone.fabricktest.apiclient.service.object.TrasferInputSo;
-import dev.asciarrone.fabricktest.apiclient.service.object.TrasferSo;
+import dev.asciarrone.fabricktest.apiclient.service.object.TransferInputSo;
+import dev.asciarrone.fabricktest.apiclient.service.object.TransferSo;
 import dev.asciarrone.fabricktest.controller.viewobject.ErrorVo;
-import dev.asciarrone.fabricktest.controller.viewobject.TrasferInputDataVo;
-import dev.asciarrone.fabricktest.controller.viewobject.TrasferVo;
+import dev.asciarrone.fabricktest.controller.viewobject.TransferInputDataVo;
+import dev.asciarrone.fabricktest.controller.viewobject.TransferVo;
 import dev.asciarrone.fabricktest.exception.BadDateException;
 
 @Component
-public class TrasferMapper {
+public class TransferMapper {
 
 	SimpleDateFormat viewDateFormat = new SimpleDateFormat("dd/mm/yyyy");
 	SimpleDateFormat apiDateFormat = new SimpleDateFormat("yyyy-mm-dd");
 
-	public TrasferInputSo inputVotoInputSo(@Valid TrasferInputDataVo inputVo) {
+	public TransferInputSo inputVotoInputSo(@Valid TransferInputDataVo inputVo) {
 		try {
-			TrasferInputSo inputSo = new TrasferInputSo();
+			TransferInputSo inputSo = new TransferInputSo();
 			inputSo.setAccountId(inputVo.getAccountId());
 			inputSo.setAmount(inputVo.getAmount());
 			inputSo.setCurrency(inputVo.getCurrency());
@@ -43,8 +43,8 @@ public class TrasferMapper {
 
 	}
 
-	public TrasferVo soToVo(TrasferSo so) {
-		TrasferVo vo = new TrasferVo();
+	public TransferVo soToVo(TransferSo so) {
+		TransferVo vo = new TransferVo();
 
 		// TODO: manage with a specific mapper.
 		vo.setErrors(new ArrayList<ErrorVo>());
@@ -56,8 +56,8 @@ public class TrasferMapper {
 		return vo;
 	}
 
-	public TrasferApiInputObject inputSoToApi(TrasferInputSo inputSo) {
-		TrasferApiInputObject apiObj = new TrasferApiInputObject();
+	public TransferApiInputObject inputSoToApi(TransferInputSo inputSo) {
+		TransferApiInputObject apiObj = new TransferApiInputObject();
 
 		CreditorApiObject crApiObj = new CreditorApiObject();
 		crApiObj.setName(inputSo.getReceiverName());
@@ -84,8 +84,8 @@ public class TrasferMapper {
 		return apiObj;
 	}
 
-	public TrasferSo apiToSo(TrasferApiObject apiObj) {
-		TrasferSo so = new TrasferSo();
+	public TransferSo apiToSo(TransferApiObject apiObj) {
+		TransferSo so = new TransferSo();
 
 		// TODO: manage with a specific mapper.
 		so.setErrors(new ArrayList<ErrorSo>());
