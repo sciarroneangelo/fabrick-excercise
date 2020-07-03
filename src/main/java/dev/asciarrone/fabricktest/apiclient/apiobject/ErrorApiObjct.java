@@ -2,7 +2,11 @@ package dev.asciarrone.fabricktest.apiclient.apiobject;
 
 import java.io.Serializable;
 
-public class Error implements Serializable {
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(content = Include.NON_NULL)
+public class ErrorApiObjct implements Serializable {
 
 	/**
 	 * 

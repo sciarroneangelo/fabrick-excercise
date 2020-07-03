@@ -1,6 +1,6 @@
 package dev.asciarrone.fabricktest.apiclient.service;
 
-import dev.asciarrone.fabricktest.apiclient.service.systemobject.BalanceSystemObject;
+import dev.asciarrone.fabricktest.apiclient.service.object.BalanceSystemObject;
 
 public interface BalanceService {
 
