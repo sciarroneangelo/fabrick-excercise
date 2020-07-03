@@ -1,4 +1,4 @@
-package dev.asciarrone.fabricktest.apiclient.service.systemobject;
+package dev.asciarrone.fabricktest.apiclient.service.object;
 
 import java.io.Serializable;
 import java.util.Date;

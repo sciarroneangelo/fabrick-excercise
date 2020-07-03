@@ -1,13 +1,13 @@
 package dev.asciarrone.fabricktest.mapper;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import dev.asciarrone.fabricktest.apiclient.apiobject.BalanceApiObject;
-import dev.asciarrone.fabricktest.apiclient.service.systemobject.BalanceSystemObject;
+import dev.asciarrone.fabricktest.apiclient.service.object.BalanceSystemObject;
 import dev.asciarrone.fabricktest.controller.viewobject.BalanceVo;
 
-@Service
-public class BalanceMapperService {
+@Component
+public class BalanceMapper {
 
 	public BalanceVo soToVo(BalanceSystemObject so) {
 		BalanceVo vo = new BalanceVo();

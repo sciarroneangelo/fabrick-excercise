@@ -1,4 +1,4 @@
-package dev.asciarrone.fabricktest.apiclient.service.systemobject;
+package dev.asciarrone.fabricktest.apiclient.service.object;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,9 +18,11 @@ public class TrasferInputSo implements Serializable {
 
 	String currency;
 
-	Double amount;
+	String amount;
 
-	Date excutionDate;
+	Date executionDate;
+
+	CreditorSo creditor;
 
 	public String getAccountId() {
 		return accountId;
@@ -54,20 +56,28 @@ public class TrasferInputSo implements Serializable {
 		this.currency = currency;
 	}
 
-	public Double getAmount() {
+	public String getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Double amount) {
+	public void setAmount(String amount) {
 		this.amount = amount;
 	}
 
-	public Date getExcutionDate() {
-		return excutionDate;
+	public Date getExecutionDate() {
+		return executionDate;
 	}
 
-	public void setExcutionDate(Date excutionDate) {
-		this.excutionDate = excutionDate;
+	public void setExecutionDate(Date executionDate) {
+		this.executionDate = executionDate;
+	}
+
+	public CreditorSo getCreditor() {
+		return creditor;
+	}
+
+	public void setCreditor(CreditorSo creditor) {
+		this.creditor = creditor;
 	}
 
 }

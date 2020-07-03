@@ -1,7 +1,7 @@
 package dev.asciarrone.fabricktest.apiclient.service;
 
-import dev.asciarrone.fabricktest.apiclient.service.systemobject.TrasferInputSo;
-import dev.asciarrone.fabricktest.apiclient.service.systemobject.TrasferSo;
+import dev.asciarrone.fabricktest.apiclient.service.object.TrasferInputSo;
+import dev.asciarrone.fabricktest.apiclient.service.object.TrasferSo;
 
 public interface TrasferService {
 

@@ -1,7 +1,7 @@
 package dev.asciarrone.fabricktest.apiclient.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,6 +14,9 @@ public class BaseService {
 	protected RestTemplate restTemplate;
 
 	@Autowired
-	protected HttpEntity<String> httpEntity;
+	protected RestTemplate moneyTrasferRestTemplate;
+
+	@Autowired
+	protected HttpHeaders httpHeaders;
 
 }

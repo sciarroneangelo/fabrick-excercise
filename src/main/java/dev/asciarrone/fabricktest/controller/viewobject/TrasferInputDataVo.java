@@ -32,8 +32,8 @@ public class TrasferInputDataVo implements Serializable {
 	String amount;
 
 	@NotBlank(message = "Exceution date cant'be empty")
-	@Pattern(regexp = " \"^\\\\d{2}-\\\\d{2}-\\\\d{4}$\"")
-	String excutionDate;
+	@Pattern(regexp = "^((0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/((19|2[0-9])[0-9]{2}))$")
+	String executionDate;
 
 	public String getAccountId() {
 		return accountId;
@@ -75,12 +75,12 @@ public class TrasferInputDataVo implements Serializable {
 		this.amount = amount;
 	}
 
-	public String getExcutionDate() {
-		return excutionDate;
+	public String getExecutionDate() {
+		return executionDate;
 	}
 
-	public void setExcutionDate(String excutionDate) {
-		this.excutionDate = excutionDate;
+	public void setExecutionDate(String executionDate) {
+		this.executionDate = executionDate;
 	}
 
 }

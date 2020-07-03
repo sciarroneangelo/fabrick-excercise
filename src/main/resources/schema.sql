@@ -2,7 +2,7 @@ CREATE TABLE creditor (
 cr_id          	INTEGER auto_increment,
 cr_name    		VARCHAR NOT NULL UNIQUE,
 cr_account_code VARCHAR,
-cr_bicCode 		VARCHAR,
+cr_bic_code 	VARCHAR,
 cr_address 		VARCHAR,
 cr_city 		VARCHAR,
 cr_countryCode 	VARCHAR,

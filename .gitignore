@@ -12,3 +12,5 @@
 .settings/org.springframework.ide.eclipse.prefs
 
 target/
+
+.sts4-cache/classpath-data.json
