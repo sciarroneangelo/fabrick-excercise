@@ -6,7 +6,7 @@ import dev.asciarrone.fabricktest.apiclient.service.object.CreditorSo;
 import dev.asciarrone.fabricktest.db.dto.CreditorDto;
 
 @Component
-public class CreditorMapper {
+public class CreditorMapper extends BaseMapper {
 
 	public CreditorSo dtoToSo(CreditorDto dto) {
 

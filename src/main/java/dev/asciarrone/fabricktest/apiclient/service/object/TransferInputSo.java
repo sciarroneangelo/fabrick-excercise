@@ -3,7 +3,7 @@ package dev.asciarrone.fabricktest.apiclient.service.object;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TrasferInputSo implements Serializable {
+public class TransferInputSo implements Serializable {
 
 	/**
 	 * 

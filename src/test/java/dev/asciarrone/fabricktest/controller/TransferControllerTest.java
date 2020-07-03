@@ -3,7 +3,6 @@ package dev.asciarrone.fabricktest.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,9 @@ import org.springframework.test.web.servlet.MockMvc;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TrasferControllerTest {
+public class TransferControllerTest {
 
-	private static String TRASFER_URI = "http://localhost:8080/fabrick-test/v1.0/api/trasfer/newMoneyTrasfer";
+	private static String TRANSFER_URI = "http://localhost:8080/fabrick-test/v1.0/api/transfer/newMoneyTransfer";
 
 	private static String VALID_BODY = "{\"accountId\":\"14537780\", \"receiverName\":\"John Doe\", \"description\":\"description\", \"currency\":\"EUR\", \"amount\":\"800\", \"executionDate\":\"03/07/2020\" }";
 
@@ -31,37 +30,35 @@ public class TrasferControllerTest {
 	private MockMvc mockMvc;
 
 	@Test
-	@Ignore
-
 	public void testValidRequest() throws Exception {
-		mockMvc.perform(post(TRASFER_URI).contentType("application/json").content(VALID_BODY))
+		mockMvc.perform(post(TRANSFER_URI).contentType("application/json").content(VALID_BODY))
 				.andExpect(status().is5xxServerError());
 
 	}
 
 	@Test
 	public void testEmpyBody() throws Exception {
-		mockMvc.perform(post(TRASFER_URI).contentType("application/json")).andExpect(status().isBadRequest());
+		mockMvc.perform(post(TRANSFER_URI).contentType("application/json")).andExpect(status().isBadRequest());
 
 	}
 
 	@Test
 	public void testNotValidAmout() throws Exception {
-		mockMvc.perform(post(TRASFER_URI).contentType("application/json").content(NOT_VALID_AMOUNT))
+		mockMvc.perform(post(TRANSFER_URI).contentType("application/json").content(NOT_VALID_AMOUNT))
 				.andExpect(status().isBadRequest());
 
 	}
 
 	@Test
 	public void testNotValidDateFormat() throws Exception {
-		mockMvc.perform(post(TRASFER_URI).contentType("application/json").content(NON_VALID_DATE_FORMAT))
+		mockMvc.perform(post(TRANSFER_URI).contentType("application/json").content(NON_VALID_DATE_FORMAT))
 				.andExpect(status().isBadRequest());
 
 	}
 
 	@Test
 	public void testNotValidDateValue() throws Exception {
-		mockMvc.perform(post(TRASFER_URI).contentType("application/json").content(NON_VALID_DATE_VALUE))
+		mockMvc.perform(post(TRANSFER_URI).contentType("application/json").content(NON_VALID_DATE_VALUE))
 				.andExpect(status().isBadRequest());
 
 	}

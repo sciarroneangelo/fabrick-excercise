@@ -10,26 +10,26 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import dev.asciarrone.fabricktest.apiclient.service.TrasferService;
-import dev.asciarrone.fabricktest.apiclient.service.object.TrasferInputSo;
-import dev.asciarrone.fabricktest.apiclient.service.object.TrasferSo;
+import dev.asciarrone.fabricktest.apiclient.service.TransferService;
+import dev.asciarrone.fabricktest.apiclient.service.object.TransferInputSo;
+import dev.asciarrone.fabricktest.apiclient.service.object.TransferSo;
 
 @SpringBootTest
-public class TrasferServiceTest {
+public class TransferServiceTest {
 
 	@Autowired
-	TrasferService trasferService;
+	TransferService transferService;
 
 	@Test()
 	public void testOK() {
-		TrasferInputSo so = new TrasferInputSo();
+		TransferInputSo so = new TransferInputSo();
 		so.setAccountId("14537780");
 		so.setReceiverName("John Doe");
 		so.setDescription("description");
 		so.setCurrency("EUR");
 		so.setExecutionDate(new Date());
 		so.setAmount("800");
-		TrasferSo output = trasferService.newMoneyTrasfer(so);
+		TransferSo output = transferService.newMoneyTransfer(so);
 		assertNotNull(output);
 		assertEquals(output.getErrors().get(0).getCode(), "API000");
 		assertEquals(output.getStatus(), "KO");
@@ -37,12 +37,12 @@ public class TrasferServiceTest {
 
 	@Test()
 	public void testNullData() {
-		assertThrows(IllegalStateException.class, () -> trasferService.newMoneyTrasfer(null));
+		assertThrows(IllegalStateException.class, () -> transferService.newMoneyTransfer(null));
 	}
 
 	@Test()
 	public void testInvalidCreditor() {
-		TrasferInputSo so = new TrasferInputSo();
+		TransferInputSo so = new TransferInputSo();
 		so.setAccountId("14537780");
 		so.setReceiverName("John De");
 		so.setDescription("description");
@@ -50,7 +50,7 @@ public class TrasferServiceTest {
 		so.setExecutionDate(new Date());
 		so.setAmount("800");
 
-		TrasferSo output = trasferService.newMoneyTrasfer(so);
+		TransferSo output = transferService.newMoneyTransfer(so);
 		assertNotNull(output);
 		assertEquals(output.getErrors().get(0).getCode(), "CR0001");
 		assertEquals(output.getStatus(), "KO");

@@ -24,7 +24,7 @@ public class Application {
 	}
 
 	@Bean
-	public RestTemplate moneyTrasferRestTemplate(RestTemplateBuilder builder) {
+	public RestTemplate moneyTransferRestTemplate(RestTemplateBuilder builder) {
 		RestTemplate restTemplate = builder.errorHandler(new RestTemplateResponseErrorHandler()).build();
 		return restTemplate;
 	}

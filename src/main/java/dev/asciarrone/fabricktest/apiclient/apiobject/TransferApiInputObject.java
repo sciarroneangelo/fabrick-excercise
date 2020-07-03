@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(content = Include.NON_NULL)
-public class TrasferApiInputObject implements Serializable {
+public class TransferApiInputObject implements Serializable {
 
 	/**
 	 * 
