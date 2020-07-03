@@ -3,7 +3,6 @@ package dev.asciarrone.fabricktest.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,6 @@ public class TransferControllerTest {
 	private MockMvc mockMvc;
 
 	@Test
-	@Ignore
-
 	public void testValidRequest() throws Exception {
 		mockMvc.perform(post(TRANSFER_URI).contentType("application/json").content(VALID_BODY))
 				.andExpect(status().is5xxServerError());

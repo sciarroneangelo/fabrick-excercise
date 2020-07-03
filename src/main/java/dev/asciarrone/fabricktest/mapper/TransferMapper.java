@@ -1,7 +1,6 @@
 package dev.asciarrone.fabricktest.mapper;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.validation.Valid;
@@ -22,10 +21,7 @@ import dev.asciarrone.fabricktest.controller.viewobject.TransferVo;
 import dev.asciarrone.fabricktest.exception.BadDateException;
 
 @Component
-public class TransferMapper {
-
-	SimpleDateFormat viewDateFormat = new SimpleDateFormat("dd/mm/yyyy");
-	SimpleDateFormat apiDateFormat = new SimpleDateFormat("yyyy-mm-dd");
+public class TransferMapper extends BaseMapper {
 
 	public TransferInputSo inputVotoInputSo(@Valid TransferInputDataVo inputVo) {
 		try {

@@ -27,28 +27,28 @@ public class TransactionControllerTest {
 
 	@Test
 	public void testMissingAccountId() throws Exception {
-		String uri = TRANSACTION_URI + "?fromAccountingDate" + FROM_DATE + "&toAccountingDate" + TO_DATE;
+		String uri = TRANSACTION_URI + "?fromAccountingDate=" + FROM_DATE + "&toAccountingDate=" + TO_DATE;
 		mockMvc.perform(get(uri).contentType("application/json")).andExpect(status().isBadRequest());
 	}
 
 	@Test
 	public void testMissingFromDate() throws Exception {
-		String uri = TRANSACTION_URI + "?accountID" + ACCOUNT_ID + "&toAccountingDate" + TO_DATE;
+		String uri = TRANSACTION_URI + "?accountId=" + ACCOUNT_ID + "&toAccountingDate=" + TO_DATE;
 		mockMvc.perform(get(uri).contentType("application/json")).andExpect(status().isBadRequest());
 
 	}
 
 	@Test
 	public void testMissingToDate() throws Exception {
-		String uri = TRANSACTION_URI + "?fromAccountingDate" + FROM_DATE + "&accountId" + ACCOUNT_ID;
+		String uri = TRANSACTION_URI + "?fromAccountingDate=" + FROM_DATE + "&accountId=" + ACCOUNT_ID;
 		mockMvc.perform(get(uri).contentType("application/json")).andExpect(status().isBadRequest());
 
 	}
 
 	@Test
-	public void testNotValidDateFormat() throws Exception {
-		String uri = TRANSACTION_URI + "?fromAccountingDate" + FROM_DATE + "&accountId" + ACCOUNT_ID
-				+ "&toAccountingDate" + TO_DATE;
+	public void testValidUri() throws Exception {
+		String uri = TRANSACTION_URI + "?accountId=" + ACCOUNT_ID + "&fromAccountingDate=" + FROM_DATE
+				+ "&toAccountingDate=" + TO_DATE;
 		mockMvc.perform(get(uri).contentType("application/json")).andExpect(status().isOk());
 
 	}

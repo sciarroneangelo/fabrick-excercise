@@ -7,7 +7,7 @@ import dev.asciarrone.fabricktest.apiclient.service.object.BalanceSystemObject;
 import dev.asciarrone.fabricktest.controller.viewobject.BalanceVo;
 
 @Component
-public class BalanceMapper {
+public class BalanceMapper extends BaseMapper {
 
 	public BalanceVo soToVo(BalanceSystemObject so) {
 		BalanceVo vo = new BalanceVo();
