@@ -38,6 +38,11 @@
 * Sono previste due classi di test **jUnit** una per il controller ed una per il relativo service, possono essere trovate nel source folder di test con i seguenti riferimenti:
  * dev.asciarrone.fabricktest.controller.TransactionControllerTest.java (testa il controller)
  * dev.asciarrone.fabricktest.service.TransactionControllerTest.java (testa il servizio).
-
+* E' stato predisposto il salvataggio delle transazioni su di un *in-memory database* utlizzando l'ORM Hibernate. Per il dettaglio vedere le seguenti classi e interfacce:
+ * dev.asciarrone.fabricktest.db.dto.TransactionDto.java
+ * dev.asciarrone.fabricktest.db.repository.TransactionTypeRepository.java
+ * dev.asciarrone.fabricktest.db.dto.TransactionTypeDto.java
+ * dev.asciarrone.fabricktest.db.repository.TransactionRepository.java
+ 
 ## Varie
-Durante la chiamata alle API ho notato che i nomi dei campi della risposta cambiano nel caso in cui si verifica un errore. L'array json contenente il dettaglio degli errori si chiama error**s** in caso di errore, mentre viene definito error (senza la s) in caso di risposta corretta. Questo mi ha costretto a mapparlo due volte nel Bean Java usato per deserializzare la risposta.
+Durante la chiamata alle API ho notato che i nomi dei campi della risposta cambiano nel caso in cui si verifica un errore. L'array json contenente il dettaglio degli errori si chiama error**s** in caso di errore, mentre viene definito error (senza la s) in caso di risposta corretta. Questo mi ha portato a mapparlo due volte lo stesso oggetto nel Bean Java usato per deserializzare la risposta.
